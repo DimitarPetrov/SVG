@@ -1,0 +1,3 @@
+D:/FMI/SVG/cmake-build-debug/CMakeFiles/SVG.dir
+D:/FMI/SVG/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/FMI/SVG/cmake-build-debug/CMakeFiles/rebuild_cache.dir
