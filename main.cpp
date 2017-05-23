@@ -46,6 +46,7 @@ void ReadFile(ifstream& inf, ShapeArr& shapes){
             fill[strlen(fill)-1] = 0;
             Rectangle* rect = new Rectangle(atof(x), atof(y), atof(width), atof(height), fill);
             shapes.add(rect);
+            delete rect;
         }
         if(!strcmp(fig, "<circle")){
             char x[32];
@@ -71,6 +72,7 @@ void ReadFile(ifstream& inf, ShapeArr& shapes){
             fill[strlen(fill)-1] = 0;
             Circle* circle = new Circle(atof(x), atof(y), atof(r), fill);
             shapes.add(circle);
+            delete circle;
         }
         if(!strcmp(fig, "<line")){
             char x1[32];
@@ -95,6 +97,7 @@ void ReadFile(ifstream& inf, ShapeArr& shapes){
             inf>>y2;
             Line* line = new Line(atof(x1), atof(y1), atof(x2), atof(y2));
             shapes.add(line);
+            delete line;
         }
 
         inf.ignore(10000, '\n');
@@ -107,6 +110,7 @@ void CreateRectangle(ShapeArr& shapes){
     cin>>x>>y>>width>>height>>fill;
     Rectangle* rect = new Rectangle(x,y,width,height,fill);
     shapes.add(rect);
+    delete rect;
 }
 
 void CreateCircle(ShapeArr& shapes){
@@ -115,6 +119,7 @@ void CreateCircle(ShapeArr& shapes){
     cin>>cx>>cy>>r>>fill;
     Circle* circle = new Circle(cx,cy,r,fill);
     shapes.add(circle);
+    delete circle;
 }
 
 void CreateLine(ShapeArr& shapes){
@@ -122,6 +127,7 @@ void CreateLine(ShapeArr& shapes){
     cin>>x1>>y1>>x2>>y2;
     Line* line = new Line(x1,y1,x2,y2);
     shapes.add(line);
+    delete line;
 }
 //Функция занимаваща се с отварянето на файлове и организацията на командния лог.
 void FileCommands(ShapeArr& shapes){
