@@ -4,4 +4,8 @@
 <svg>
   <line x1="1" y1="1" x2="1" y2="1" />
   <rect x="1" y="2" width="3" height="4" fill="green" />
+  <line x1="1" y1="1" x2="1" y2="1" />
+  <rect x="1" y="2" width="3" height="4" fill="green" />
+  <line x1="1" y1="1" x2="1" y2="1" />
+  <rect x="1" y="2" width="3" height="4" fill="green" />
 </svg>

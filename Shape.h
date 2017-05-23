@@ -24,6 +24,8 @@ public:
     //виртуална функция, която ни помага да търсим обект от какъвто и да е онаследен клас в зададен правоъгълник.
     virtual bool WithinRectangle(double x, double y, double width, double height) const = 0;
 
+    virtual Shape* Clone() const = 0;
+
     virtual ~Shape();
 
 };

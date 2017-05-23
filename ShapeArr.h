@@ -38,6 +38,7 @@ private:
     int current;
 
     void Copy(const ShapeArr& a);
+    void Erase();
     void resize();
 };
 

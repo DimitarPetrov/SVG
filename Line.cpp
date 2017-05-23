@@ -72,3 +72,7 @@ bool Line::WithinRectangle(double x, double y, double width, double height) cons
     }
     return 0;
 }
+
+Shape *Line::Clone() const {
+    return new Line(x1,y1,x2,y2);
+}

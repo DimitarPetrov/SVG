@@ -38,6 +38,8 @@ public:
 
     virtual bool WithinRectangle(double x, double y, double width, double height) const override;
 
+    virtual Shape* Clone() const override;
+
 
 
 private:

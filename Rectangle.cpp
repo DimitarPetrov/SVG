@@ -113,3 +113,7 @@ bool Rectangle::WithinRectangle(double x, double y, double width, double height)
     }
     return 0;
 }
+
+Shape* Rectangle::Clone() const {
+    return new Rectangle(x,y,width,height,fill);
+}

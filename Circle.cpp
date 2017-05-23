@@ -106,3 +106,7 @@ bool Circle::WithinRectangle(double x, double y, double width, double height) co
     }
     return 0;
 }
+
+Shape *Circle::Clone() const {
+    return new Circle(cx,cy,r,fill);
+}

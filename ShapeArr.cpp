@@ -20,7 +20,7 @@ void ShapeArr::Copy(const ShapeArr &a) {
     current = a.current;
     arr = new Shape* [a.capacity];
     for(int i = 0; i<current; ++i){
-        arr[i] = a.arr[i];
+        arr[i] = a.arr[i]->Clone();
     }
 }
 
@@ -28,20 +28,20 @@ ShapeArr &ShapeArr::operator=(const ShapeArr &a) {
     if(this == &a){
         return *this;
     }
-    delete[] arr;
+    Erase();
     Copy(a);
     return *this;
 }
 
 ShapeArr::~ShapeArr() {
-    delete[] arr;
+    Erase();
 }
 
 void ShapeArr::add(Shape *a) {
     if(capacity == current){
         resize();
     }
-    arr[current] = a;
+    arr[current] = a->Clone();
     ++current;
 }
 
@@ -61,7 +61,10 @@ bool ShapeArr::remove(int indx) {
     }
     --current;
     for(int i = indx; i<current; ++i){
-        arr[i] = arr[i+1];
+        Shape* tmp;
+        tmp = arr[i];
+        arr[i] = arr[i+1]->Clone();
+        delete tmp;
     }
     return 1;
 }
@@ -120,5 +123,12 @@ void ShapeArr::WithinRectangle(double x, double y, double width, double height) 
     if(flag == false){
         std::cout<<"No figures are located within rectangle "<< x << " " << y << " " << width << " " << height << "." <<std::endl;
     }
+}
+
+void ShapeArr::Erase() {
+    for(int i = 0; i<current; ++i){
+        delete arr[i];
+    }
+    delete[]arr;
 }
 
